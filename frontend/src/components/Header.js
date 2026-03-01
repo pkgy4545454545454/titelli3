@@ -152,14 +152,7 @@ const Header = () => {
           {/* Right: Actions - Profil uniquement */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Cashback */}
-            <Link to="/cashback" className="p-2 text-amber-400 hover:text-amber-300 hidden sm:block" data-testid="cashback-link">
-              <HandCoins className="w-5 h-5" />
-            </Link>
-
-            {/* Wishlist */}
-            <Link to="/wishlist" className="p-2 text-gray-400 hover:text-white hidden sm:block">
-              <Heart className="w-5 h-5" />
-            </Link>
+        
 
             {/* Profile Icon - Always visible */}
             <DropdownMenu>
