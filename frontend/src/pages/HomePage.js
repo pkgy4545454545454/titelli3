@@ -195,7 +195,7 @@ const HomePage = () => {
   };
 
   // Panoramic video URL (using a beautiful stock video of Lausanne/city)
-  const panoramicVideoUrl = 'https://videos.pexels.com/video-files/3015510/3015510-uhd_2560_1440_24fps.mp4';
+  const panoramicVideoUrl = 'head.mp4';
   const heroImage = 'https://images.unsplash.com/photo-1733950489642-bd1a7c3e69bb?w=1920&q=80';
 
   const mainCategories = [
