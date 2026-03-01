@@ -6,7 +6,7 @@ import EnterpriseCard from '../components/EnterpriseCard';
 import ServiceProductCard from '../components/ServiceProductCard';
 import ScrollingReviews from '../components/ScrollingReviews';
 import { toast } from 'sonner';
-
+import { Menu,  Heart, Bell, ChevronDown, User, Image, Video, HandCoins, Building2, UserCircle } from 'lucide-react';
 // Carousel Component with light theme - Responsive
 const Carousel = ({ children, itemWidth = 280 }) => {
   const carouselRef = useRef(null);
@@ -415,21 +415,20 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Smooth Gradient Transition - Long, blurred, no limits */}
-      <div 
-        className="h-40"
-        style={{ 
-          background: 'linear-gradient(to bottom, #000 0%, #0a0a0a 10%, #151515 25%, #252525 40%, #505050 55%, #909090 70%, #c0c0c0 82%, #e8e8e8 92%, #fff 100%)',
-          filter: 'blur(8px)',
-          transform: 'scaleY(1.2)',
-          marginTop: '-10px',
-          marginBottom: '-10px'
-        }}
-      ></div>
 
       {/* Search Bar Section - Under Video */}
       <section className="py-4 sm:py-6 bg-white" data-testid="search-section">
         <div className="max-w-2xl mx-auto px-4">
+            <Link to="/" className="text-amber-400 hover:text-amber-300 hidden sm:inline-block bg-black" data-testid="logo-link">
+                        <img 
+                          src="/logo_titelli.png" 
+                          alt="Titelli"
+                          className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+                        />
+                      </Link>
+           <Link to="/cashback" className="p-2 text-amber-400 hover:text-amber-300 hidden sm:inline-block" data-testid="cashback-link">
+              <HandCoins className="w-5 h-5" />
+            </Link>
           <form onSubmit={handleSearch} className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
             <input
@@ -463,26 +462,6 @@ const HomePage = () => {
             </Link>
           </div>
 
-          {/* Category Tags - Small, no icons */}
-          <div className="flex flex-wrap gap-2 mb-6">
-            {[
-              { label: 'Services', path: '/services' },
-              { label: 'Certifiés', path: '/certifies' },
-              { label: 'Labelisés', path: '/labellises' },
-              { label: 'Premium', path: '/premium' },
-              { label: 'Tendances', path: '/tendances' },
-              { label: 'Guests', path: '/guests' },
-              { label: 'Offres', path: '/offres' },
-            ].map((cat) => (
-              <Link
-                key={cat.label}
-                to={cat.path}
-                className="px-3 py-1 text-xs text-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
-              >
-                {cat.label}
-              </Link>
-            ))}
-          </div>
 
           {loading ? (
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
@@ -1227,3 +1206,4 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
