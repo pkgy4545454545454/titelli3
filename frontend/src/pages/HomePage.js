@@ -433,7 +433,7 @@ const HomePage = () => {
       {/* Search Bar Section - Under Video */}
       <section className="py-4 sm:py-6 bg-white" data-testid="search-section">
         <div className="max-w-2xl mx-auto px-4">
-            <Link to="/" className="text-amber-400 hover:text-amber-300 hidden sm:inline-block bg-black" data-testid="logo-link">
+            <Link to="/" className="text-amber-400 hover:text-amber-300 hidden sm:inline-block" data-testid="logo-link">
                         <img 
                           src="/logo_titellid.png" 
                           alt="Titelli"
