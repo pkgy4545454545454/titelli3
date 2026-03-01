@@ -69,7 +69,7 @@ const Header = () => {
             {/* Logo à gauche */}
             <Link to="/" className="flex-shrink-0" data-testid="logo-link">
               <img 
-                src="/logo_titellid.png" 
+                src="/logo_titelli.png" 
                 alt="Titelli"
                 className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
               />
