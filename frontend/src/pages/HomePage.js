@@ -435,7 +435,7 @@ const HomePage = () => {
         <div className="max-w-2xl mx-auto px-4">
             <Link to="/" className="text-amber-400 hover:text-amber-300 hidden sm:inline-block bg-black" data-testid="logo-link">
                         <img 
-                          src="/logo_titelli.png" 
+                          src="/logo_titellid.png" 
                           alt="Titelli"
                           className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
                         />
