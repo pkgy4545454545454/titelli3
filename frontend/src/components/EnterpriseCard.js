@@ -69,7 +69,7 @@ const EnterpriseCard = ({ enterprises = [], large = false, category }) => {
     >
       {/* CATEGORY LABEL */}
       <div className="flex items-center gap-1.5 mb-3">
-        <span className="text-[#FF0000] justify-center m-auto">
+        <span className="text-black justify-center m-auto">
           {category}
         </span>
       </div>
