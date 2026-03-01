@@ -336,6 +336,17 @@ const HomePage = () => {
     }
   };
 
+  const enterprisesByCategory = allEnterprises.reduce((acc, enterprise) => {
+    const category = enterprise.category || 'Autres';
+    if (!acc[category]) acc[category] = [];
+    acc[category].push(enterprise);
+    return acc;
+  }, {});
+
+
+
+
+
   const panoramicVideoUrl = `${process.env.REACT_APP_BACKEND_URL}/api/uploads/video_lausanne_107_v2.mp4`;
   const heroImage = 'https://images.unsplash.com/photo-1733950489642-bd1a7c3e69bb?w=1920&q=80';
 
@@ -413,6 +424,9 @@ const HomePage = () => {
             </div>
           </div>
         </div>
+
+
+
       </section>
 
 
@@ -471,14 +485,13 @@ const HomePage = () => {
             </div>
           ) : allEnterprises.length > 0 ? (
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
-              {allEnterprises.slice(0, 20).map((enterprise, index) => (
-                <div 
-                  key={enterprise.id} 
-                  className="animate-fade-in"
-                  style={{ animationDelay: `${index * 0.05}s` }}
-                >
-                  <EnterpriseCard enterprise={enterprise} />
-                </div>
+           {Object.entries(enterprisesByCategory).map(([category, list]) => (
+              <div key={category}>
+                <EnterpriseCard
+                  category={category}
+                  enterprises={list}
+                />
+              </div>
               ))}
             </div>
           ) : (
@@ -1206,4 +1219,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
 
