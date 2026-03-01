@@ -53,8 +53,7 @@ const Header = () => {
     { path: '/services', label: 'Services' },
     { path: '/products', label: 'Produits', className: 'text-amber-400' },
     { path: '/entreprises', label: 'Entreprises' },
-    { path: '/rdv', label: 'Rdv', className: 'text-red-400' },
-    { path: '/sports', label: 'Sports', className: 'text-green-400' },
+
   ];
 
   const isActive = (path) => location.pathname === path;
