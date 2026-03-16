@@ -383,7 +383,7 @@ const HomePage = () => {
 
         {/* Hero Content - Just title, no logo, no description */}
         <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 pt-20">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white mb-8 animate-fade-in drop-shadow-lg" style={{ fontFamily: 'Playfair Display, serif' }}>
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-black  mb-8 animate-fade-in drop-shadow-lg" style={{ fontFamily: 'Playfair Display, serif', textAlign: 'center',marginTop:'300px' }}>
             Les meilleurs prestataires<br />
             <span className="gold-gradient">de ta région</span>
           </h1>
