@@ -59,7 +59,7 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black" data-testid="main-header">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black m-auto" data-testid="main-header">
       <div className="max-w-7xl mx-auto px-4">
         {/* Main Header Bar */}
         <div className="flex items-center justify-between h-14 lg:h-16">
@@ -85,7 +85,7 @@ const Header = () => {
             </button>
 
             {/* Desktop Search Bar */}
-    
+           
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-5 ml-4">
@@ -152,7 +152,7 @@ const Header = () => {
           {/* Right: Actions - Profil uniquement */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Cashback */}
-        
+         
 
             {/* Profile Icon - Always visible */}
             <DropdownMenu>
