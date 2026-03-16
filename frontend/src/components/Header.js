@@ -88,25 +88,25 @@ const Header = () => {
            
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-5 ml-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`text-sm font-medium transition-colors ${
-                    isActive(link.path) 
-                      ? 'text-white' 
-                      : link.className || 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav> 
+         <nav className="hidden lg:flex items-center gap-5 ml-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-sm font-medium transition-colors ${
+                  isActive(link.path) 
+                    ? 'text-white' 
+                    : link.className || 'text-gray-400 hover:text-white'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+          </div>
           
           {/* Right: Actions - Profil uniquement */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Cashback */}
          
 
             {/* Profile Icon - Always visible */}
