@@ -103,52 +103,7 @@ const Header = () => {
                 </Link>
               ))}
               
-              {/* Pub IA Dropdown */}
-              <DropdownMenu>
-                <DropdownMenuTrigger className="text-sm font-medium text-purple-400 flex items-center gap-1 outline-none">
-                  <Sparkles className="w-3.5 h-3.5" />
-                  Pub IA
-                  <ChevronDown className="w-3 h-3" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-gray-900 border border-white/10 rounded-xl p-2">
-                  <DropdownMenuItem asChild>
-                    <Link to="/media-pub" className="flex items-center gap-2 text-amber-400 cursor-pointer">
-                      <Image className="w-4 h-4" />
-                      Images IA
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/video-pub" className="flex items-center gap-2 text-purple-400 cursor-pointer">
-                      <Video className="w-4 h-4" />
-                      Vidéos IA
-                    </Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-
-              {/* Partenaires - Brochure */}
-              <DropdownMenu>
-                <DropdownMenuTrigger className="text-sm font-medium text-gray-400 hover:text-white flex items-center gap-1 outline-none">
-                  Partenaires
-                  <ChevronDown className="w-3 h-3" />
-                </DropdownMenuTrigger>
-                <DropdownMenuContent className="bg-gray-900 border border-white/10 rounded-xl p-2">
-                  <DropdownMenuItem asChild>
-                    <a 
-                      href={`${process.env.REACT_APP_BACKEND_URL}/api/uploads/Brochure_Titelli_Partenaires.pdf`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-white cursor-pointer"
-                    >
-                      <FileText className="w-4 h-4" />
-                      Brochure Titelli
-                    </a>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            </nav>
-          </div>
-
+          
           {/* Right: Actions - Profil uniquement */}
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Cashback */}
