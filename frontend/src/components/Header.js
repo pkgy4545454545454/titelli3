@@ -193,36 +193,7 @@ const Header = () => {
                 </Link>
               ))}
               
-              {/* Pub IA Links */}
-              <div className="pt-2 border-t border-white/10 mt-2">
-                <Link
-                  to="/media-pub"
-                  className="block py-3 px-4 rounded-lg text-center text-sm font-medium text-amber-400 hover:bg-white/5"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Pub IA - Images
-                </Link>
-                <Link
-                  to="/video-pub"
-                  className="block py-3 px-4 rounded-lg text-center text-sm font-medium text-purple-400 hover:bg-white/5"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Pub IA - Vidéos
-                </Link>
-              </div>
-
-              {/* Partenaires */}
-              <div className="pt-2 border-t border-white/10 mt-2">
-                <a
-                  href={`${process.env.REACT_APP_BACKEND_URL}/api/uploads/Brochure_Titelli_Partenaires.pdf`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block py-3 px-4 rounded-lg text-center text-sm font-medium text-gray-300 hover:bg-white/5"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Brochure Partenaires
-                </a>
-              </div>
+            
 
               {/* Other links */}
               <div className="pt-2 border-t border-white/10 mt-2">
