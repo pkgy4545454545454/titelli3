@@ -102,7 +102,7 @@ const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              
+            </nav> 
           
           {/* Right: Actions - Profil uniquement */}
           <div className="flex items-center gap-2 sm:gap-3">
