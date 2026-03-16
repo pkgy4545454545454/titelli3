@@ -347,7 +347,7 @@ const HomePage = () => {
 
 
 
-  const panoramicVideoUrl = `./head.mp4`;
+  const panoramicVideoUrl = `head.mp4`;
   const heroImage = 'https://images.unsplash.com/photo-1733950489642-bd1a7c3e69bb?w=1920&q=80';
 
   const mainCategories = [
@@ -360,7 +360,7 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-white" data-testid="home-page">
       {/* Hero Section with Panoramic Video */}
-      <section className="relative h-[70vh]  overflow-hidden" data-testid="hero-section">
+      <section className="relative h-[70vh] overflow-hidden" data-testid="hero-section">
         {/* Video Background */}
         <div className="absolute inset-0">
           <video
@@ -371,26 +371,27 @@ const HomePage = () => {
             playsInline
             className="w-full h-full object-cover"
             poster={heroImage}
+            style={{marginTop: '60px'}}
           >
             <source src={panoramicVideoUrl} type="video/mp4" />
           </video>
           <img 
             src={heroImage} 
             alt="Lausanne" 
-            className="absolute inset-0 w-full h-full object-cover -z-10"
+            className="absolute inset-0 w-full h-70% object-cover -z-10"
           />
         </div>
 
         {/* Hero Content - Just title, no logo, no description */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 pt-20">
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-left px-4">
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-black  mb-8 animate-fade-in drop-shadow-lg" style={{ fontFamily: 'Playfair Display, serif', textAlign: 'center',marginTop:'300px' }}>
             Les meilleurs prestataires<br />
-            <span className="gold-gradient">de ta région</span>
+            <span style={{ color: 'green' }}>de ta région</span>
           </h1>
 
           {/* Category Buttons - 2 rows */}
-          <div className="flex flex-col items-center gap-1 animate-fade-in stagger-2">
-            <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-col items-start gap-1 animate-fade-in stagger-2">
+            <div className="flex flex-wrap justify-start gap-2" style={{ fontFamily: 'Playfair Display, serif', textAlign: 'center', marginTop: '60px' }}>
               {[
                 { label: 'Services', path: '/services' },
                 { label: 'Produits', path: '/products' },
@@ -400,13 +401,13 @@ const HomePage = () => {
                 <Link
                   key={cat.label}
                   to={cat.path}
-                  className="px-4 py-2 bg-black/50 backdrop-blur-md border border-white/20 rounded-full text-white text-sm hover:bg-white hover:text-black transition-all duration-300"
+                  className="px-4 py-2 bg-black/80 backdrop-blur-md border border-white/20 rounded-[10px] text-white text-sm hover:bg-white hover:text-black transition-all duration-300 min-w-[106px]"
                 >
                   {cat.label}
                 </Link>
               ))}
             </div>
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-2" style={{ fontFamily: 'Playfair Display, serif', textAlign: 'center' }}>
               {[
                 { label: 'Premium', path: '/premium' },
                 { label: 'Tendances', path: '/tendances' },
@@ -416,7 +417,7 @@ const HomePage = () => {
                 <Link
                   key={cat.label}
                   to={cat.path}
-                  className="px-4 py-2 bg-black/50 backdrop-blur-md border border-white/20 rounded-full text-white text-sm hover:bg-white hover:text-black transition-all duration-300"
+                  className="px-4 py-2 bg-black/80 backdrop-blur-md border border-white/20 rounded-[10px] text-white text-sm hover:bg-white hover:text-black transition-all duration-300 min-w-[106px] justify-center m-x-auto"
                 >
                   {cat.label}
                 </Link>
@@ -424,22 +425,18 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-
-
-
       </section>
-
 
       {/* Search Bar Section - Under Video */}
       <section className="py-4 sm:py-6 bg-white" data-testid="search-section">
         <div className="max-w-2xl mx-auto px-4">
             <Link to="/" className="text-amber-400 hover:text-amber-300 hidden sm:inline-block" data-testid="logo-link">
-                        <img 
-                          src="/logo_titellid.png" 
-                          alt="Titelli"
-                          className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
-                        />
-                      </Link>
+                <img 
+                    src="/logo_titellid.png" 
+                    alt="Titelli"
+                    className="w-8 h-8 sm:w-10 sm:h-10 object-contain"
+                  />
+            </Link>
            <Link to="/cashback" className="p-2 text-amber-400 hover:text-amber-300 hidden sm:inline-block" data-testid="cashback-link">
               <HandCoins className="w-5 h-5" />
             </Link>
@@ -465,11 +462,8 @@ const HomePage = () => {
 
       {/* Les meilleurs prestataires Section - Grid 5 columns */}
       <section className="py-8 sm:py-12 bg-white" data-testid="top-providers-section">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-[120rem]  mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold text-gray-900">
-              Les meilleurs prestataires de votre région
-            </h2>
             <Link to="/entreprises" className="hidden md:flex items-center gap-2 text-[#0047AB] hover:text-[#2E74D6] font-medium transition-colors">
               Voir tout
               <ArrowRight className="w-5 h-5" />
@@ -507,7 +501,7 @@ const HomePage = () => {
 
       {/* Services Section - Grid 4 columns */}
       <section className="py-8 sm:py-16 bg-gray-50" data-testid="services-section">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-[120rem] mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between mb-6 sm:mb-8">
             <div>
               <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold text-gray-900">
@@ -567,7 +561,7 @@ const HomePage = () => {
 
       {/* Les meilleurs produits - Grid 4 columns */}
       <section className="py-8 sm:py-16 bg-white" data-testid="products-section">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-[120rem] mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between mb-6 sm:mb-8">
             <div>
               <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold text-gray-900">
@@ -637,7 +631,7 @@ const HomePage = () => {
       {/* Tendances Actuelles - Grid 4 columns */}
       {tendances.length > 0 && (
         <section className="py-8 sm:py-16 bg-gray-50" data-testid="tendances-section">
-          <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="max-w-[120rem] mx-auto px-4 md:px-8">
             <div className="flex items-center justify-between mb-6 sm:mb-8">
               <div>
                 <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold text-gray-900">
@@ -664,7 +658,7 @@ const HomePage = () => {
       {/* Guests du moment - Grid 4 columns */}
       {guests.length > 0 && (
         <section className="py-8 sm:py-16 bg-white" data-testid="guests-section">
-          <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="max-w-[120rem] mx-auto px-4 md:px-8">
             <div className="flex items-center justify-between mb-6 sm:mb-8">
               <div>
                 <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold text-gray-900">
@@ -691,7 +685,7 @@ const HomePage = () => {
       {/* Premium Section - Grid 4 columns */}
       {premium.length > 0 && (
         <section className="py-8 sm:py-16 bg-gray-50" data-testid="premium-section">
-          <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="max-w-[120rem]mx-auto px-4 md:px-8">
             <div className="flex items-center justify-between mb-6 sm:mb-8">
               <div>
                 <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold text-gray-900">
@@ -717,7 +711,7 @@ const HomePage = () => {
 
       {/* Job Offers Section - Carousel */}
       <section className="py-8 sm:py-16 bg-gray-50" data-testid="jobs-section">
-        <div className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="max-w-[120rem] mx-auto px-4 md:px-8">
           <div className="flex items-center justify-between mb-4 sm:mb-6">
             <div>
               <h2 className="text-lg sm:text-2xl md:text-3xl font-semibold text-gray-900">
@@ -1219,5 +1213,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-
