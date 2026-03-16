@@ -210,7 +210,7 @@ const HomePage = () => {
       {/* Hero Section with Panoramic Video */}
       <section className="relative h-screen overflow-hidden" data-testid="hero-section">
         {/* Video Background */}
-        <div className="absolute inset-0">
+   <div className="absolute inset-0">
           <video
             ref={videoRef}
             autoPlay
@@ -219,17 +219,17 @@ const HomePage = () => {
             playsInline
             className="w-full h-full object-cover"
             poster={heroImage}
+            style={{marginTop: '60px'}}
           >
             <source src={panoramicVideoUrl} type="video/mp4" />
-            {/* Fallback to image if video doesn't load */}
           </video>
           <img 
             src={heroImage} 
             alt="Lausanne" 
-            className="absolute inset-0 w-full h-full object-cover -z-10"
+            className="absolute inset-0 w-full h-70% object-cover -z-10"
           />
-          <div className="panoramic-overlay absolute inset-0" />
         </div>
+
 
         {/* Video Controls */}
         <div className="absolute bottom-8 right-8 flex items-center gap-3 z-20">
