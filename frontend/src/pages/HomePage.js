@@ -251,33 +251,50 @@ const HomePage = () => {
           </button>
         </div>
 
-        {/* Hero Content */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 pt-20">
-         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-black  mb-8 animate-fade-in drop-shadow-lg" style={{ fontFamily: 'Playfair Display, serif', textAlign: 'center',marginTop:'300px' }}>
+            {/* Hero Content - Just title, no logo, no description */}
+        <div className="absolute inset-0 flex flex-col justify-center items-center text-left px-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-black  mb-8 animate-fade-in drop-shadow-lg" style={{ fontFamily: 'Playfair Display, serif', textAlign: 'center',marginTop:'300px' }}>
             Les meilleurs prestataires<br />
-            <span className="gold-gradient">de ta région</span>
+            <span style={{ color: 'green' }}>de ta région</span>
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mb-8 animate-fade-in stagger-1">
-            Découvrez les services et produits de qualité à Lausanne
-          </p>
 
-          {/* Category Buttons - Inline Block sous le titre */}
-          <div className="inline-flex flex-wrap justify-center gap-3 animate-fade-in stagger-2">
-            {mainCategories.map((cat) => (
-              <Link
-                key={cat.id}
-                to={cat.path}
-                className="inline-block px-6 py-3 bg-black/70 backdrop-blur-lg border border-white/10 rounded-lg text-white font-medium hover:bg-white hover:text-black transition-all duration-300"
-                data-testid={`hero-btn-${cat.id}`}
-              >
-                <span className="flex items-center gap-2">
-                  <cat.icon className="w-5 h-5" />
+          {/* Category Buttons - 2 rows */}
+          <div className="flex flex-col items-start gap-1 animate-fade-in stagger-2">
+            <div className="flex flex-wrap justify-start gap-2" style={{ fontFamily: 'Playfair Display, serif', textAlign: 'center', marginTop: '60px' }}>
+              {[
+                { label: 'Services', path: '/services' },
+                { label: 'Produits', path: '/products' },
+                { label: 'Certifiés', path: '/certifies' },
+                { label: 'Labelisés', path: '/labellises' },
+              ].map((cat) => (
+                <Link
+                  key={cat.label}
+                  to={cat.path}
+                  className="px-4 py-2 bg-black/80 backdrop-blur-md border border-white/20 rounded-[10px] text-white text-sm hover:bg-white hover:text-black transition-all duration-300 min-w-[106px]"
+                >
                   {cat.label}
-                </span>
-              </Link>
-            ))}
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-wrap justify-center gap-2" style={{ fontFamily: 'Playfair Display, serif', textAlign: 'center' }}>
+              {[
+                { label: 'Premium', path: '/premium' },
+                { label: 'Tendances', path: '/tendances' },
+                { label: 'Guests', path: '/guests' },
+                { label: 'Offres', path: '/offres' },
+              ].map((cat) => (
+                <Link
+                  key={cat.label}
+                  to={cat.path}
+                  className="px-4 py-2 bg-black/80 backdrop-blur-md border border-white/20 rounded-[10px] text-white text-sm hover:bg-white hover:text-black transition-all duration-300 min-w-[106px] justify-center m-x-auto"
+                >
+                  {cat.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
+      </section>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
