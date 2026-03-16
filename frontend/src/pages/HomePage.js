@@ -371,7 +371,7 @@ const HomePage = () => {
             playsInline
             className="w-full h-full object-cover"
             poster={heroImage}
-            style={{marginTop: '60px'}}
+          
           >
             <source src={panoramicVideoUrl} type="video/mp4" />
           </video>
